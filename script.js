@@ -9,4 +9,6 @@ fetch("https://api.dictionaryapi.dev/api/v2/entries/en/narrow", {
   
   // Extracting the information
 
+  const mainUL = document.createElement('ul')
+
   
