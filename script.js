@@ -1,32 +1,28 @@
 // This is where I will implement the API
 
-console.log("is it here");
-fetch("https://official-joke-api.appspot.com/random_joke", {
-  method: "GET",
-})
-  .then(res => {return  res.json()})
-  .then((data) => console.log(data))
+
+const API_JOKE_SPEW = 'https://official-joke-api.appspot.com/random_joke';
+
+async function fetchData(url) {
+  const response = await fetch (url);
+  const data = await response.json();
+  return data;
+}
+
+async function getJOKEData () {
+  const data = await fetchData(API_JOKE_SPEW);
+  const jokeData = {
+    set: data.setup,
+    punch: data.punchline
+
+  }
+  return jokeData;
+
   
-  // Extracting the information
+  
+}
 
-  async function getJokeData() {
-    const data = await fetchData('https://official-joke-api.appspot.com/random_joke');
-    const jokeData = {
-      setup: data.setup,
-      punchline: data.punchline
-    }
-    return jokeData
-  }
-
-
-  console.log(getJokeData)
-
-  function showJokes(setup, punchline) {
-    document.getElementById('setup').textContent = setup;
-    document.getElementById('punchline').textContent = punchline;
-  }
-
-    console.log(showJokes)
+console.log(getJOKEData)
 
 
 
