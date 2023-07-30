@@ -9,20 +9,19 @@ async function fetchData(url) {
   return data;
 }
 
-async function getJOKEData () {
+async function getJOKEData() {
   const data = await fetchData(API_JOKE_SPEW);
   const jokeData = {
     set: data.setup,
     punch: data.punchline
 
-  }
+  };
   return jokeData;
-
-  
-  
 }
+  
+  
 
-console.log(getJOKEData)
+
 
 
 

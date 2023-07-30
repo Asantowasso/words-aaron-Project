@@ -15,6 +15,12 @@
   
 
 
-    <script src="script.js"></script>
+    <script >
+      fetch ('https://official-joke-api.appspot.com/random_joke').then(function (response){
+        return response.json();
+      }).then(function (obj){
+        console.log(obj)
+      })
+    </script>
   </body>
 </html>
