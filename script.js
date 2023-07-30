@@ -1,24 +1,38 @@
 // This is where I will implement the API
 
 
-const API_JOKE_SPEW = 'https://official-joke-api.appspot.com/random_joke';
+const apiEndpoint = 'https://jsonplaceholder.typicode.com/users';
+const display = document.querySelector("#display-data")
 
-async function fetchData(url) {
-  const response = await fetch (url);
-  const data = await response.json();
-  return data;
+const getData = async () => {
+  const res = await fetch (apiEndpoint);
+  const data = await res.json();
+  return data
 }
 
-async function getJOKEData() {
-  const data = await fetchData(API_JOKE_SPEW);
-  const jokeData = {
-    set: data.setup,
-    punch: data.punchline
+// getData()
 
-  };
-  return jokeData;
+const displayJokes = async () => {
+  const payload  = await getData();
+  console.log(payload)
+
+  let dataDisplay = payload.map((object) => {
+    const {name, username} = object;
+
+    return `
+    <div>
+    <div class="container">
+    <p>name: ${name}</p>
+    <p>username: ${username}</p>
+    </div>
+    `
+
+  });
+
+  display.innerHTML = dataDisplay
+
 }
-  
+displayJokes();
   
 
 
