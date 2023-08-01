@@ -1,2 +1,2 @@
-# words-aaron-Project
-An application that allows user access to the English language
+# Met-Project
+An application that serves the user information about exhibits at the Metropolitan Museum of art in NYC
