@@ -28,3 +28,13 @@ fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments")
     var name4 = obj.departments[10].displayName;
     document.querySelector(".section4").innerHTML = name4;
   });
+
+  // Now I want to access specific pieces 
+
+  fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (obj){
+    console.log(obj)
+  }) 
