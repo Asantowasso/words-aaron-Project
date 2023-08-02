@@ -30,11 +30,14 @@ fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments")
   });
 
   // Now I want to access specific pieces 
+  
 
-  fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects")
+  fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=1|3|10|12")
   .then(function (response) {
     return response.json();
   })
   .then(function (obj){
     console.log(obj)
+
+    
   }) 
