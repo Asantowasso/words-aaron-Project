@@ -34,9 +34,11 @@ fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments")
 
   fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=1|3|10|12")
   .then(function (response) {
+    
     return response.json();
   })
   .then(function (obj){
+    console.log(obj.objectIDs)
     console.log(obj)
 
     
