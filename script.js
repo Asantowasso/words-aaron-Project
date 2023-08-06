@@ -38,10 +38,21 @@ fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments")
     return response.json();
   })
   .then(function (obj){
+    console.log(obj.objectIDs)
     console.log(obj.objectIDs[1000])
+    console.log(obj.objectIDs[61800])
+    console.log(obj.objectIDs[68186])
+    console.log(obj.objectIDs[33151])
 
     var art1 = obj.objectIDs[1000];
     document.querySelector(".item1").innerHTML = art1;
 
-    
+    var art2 = obj.objectIDs[61800];
+    document.querySelector(".item2").innerHTML = art2;
+
+    var art3 = obj.objectIDs[68186];
+    document.querySelector(".item3").innerHTML = art3;
+
+    var art4 = obj.objectIDs[33151];
+    document.querySelector(".item4").innerHTML = art4;
   }) 
