@@ -2,46 +2,31 @@
 
 //Finds info about the departments
 
-fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments")
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (obj) {
-    console.log(obj.departments[0].displayName);
-    console.log(obj.departments[1].displayName);
-    console.log(obj.departments[8].displayName);
-    console.log(obj.departments[10].displayName);
-
-    // American Decorative Arts display
-    var name1 = obj.departments[0].displayName;
-    document.querySelector(".section1").innerHTML = name1;
-
-    //Ancient Near Eastern Art display
-    var name2 = obj.departments[1].displayName;
-    document.querySelector(".section2").innerHTML = name2;
-
-    //Egyptian Art
-    var name3 = obj.departments[8].displayName;
-    document.querySelector(".section3").innerHTML = name3;
-
-    //European Sculpture and Decorative Arts
-    var name4 = obj.departments[10].displayName;
-    document.querySelector(".section4").innerHTML = name4;
-  });
-
-// This function displays the objectIDs of four unique pieces from each of the feature collections
-
-// fetch(
-//   "https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=1|3|10|12"
-// )
+// fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments")
 //   .then(function (response) {
 //     return response.json();
 //   })
 //   .then(function (obj) {
-//     // console.log(obj.objectIDs[1000])
-//     console.log(obj.objectIDs[61800]);
-//     console.log(obj.objectIDs[68186]);
-//     console.log(obj.objectIDs[33151]);
+//     console.log(obj.departments[0].displayName);
+//     console.log(obj.departments[1].displayName);
+//     console.log(obj.departments[8].displayName);
+//     console.log(obj.departments[10].displayName);
+
+//     // American Decorative Arts display
+//     var name1 = obj.departments[0].displayName;
+//     document.querySelector(".section1").innerHTML = name1;
+
+//     //Ancient Near Eastern Art display
+//     var name2 = obj.departments[1].displayName;
+//     document.querySelector(".section2").innerHTML = name2;
+
+//     //Egyptian Art
+//     var name3 = obj.departments[8].displayName;
+//     document.querySelector(".section3").innerHTML = name3;
+
+//     //European Sculpture and Decorative Arts
+//     var name4 = obj.departments[10].displayName;
+//     document.querySelector(".section4").innerHTML = name4;
 //   });
 
 var req1 = "61800";
@@ -49,10 +34,6 @@ var req2 = "323912";
 var req3 = "56766";
 
 const reqs = [req1, req2, req3];
-
-// for (i in reqs){
-//   console.log(reqs[i]);
-// }
 
 for (let i = 0; i < reqs.length; i++) {
   console.log(reqs[i]);
@@ -65,8 +46,11 @@ for (let i = 0; i < reqs.length; i++) {
     })
     .then(function (obj) {
       console.log(obj);
+      console.log(obj.title)
+      console.log(obj.primaryImage)
+      console.log(obj.objectID)
+      console.log(obj.department)
     });
 }
 
 console.log(reqs);
-
