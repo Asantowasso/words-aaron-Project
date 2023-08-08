@@ -7,6 +7,7 @@
 //     return response.json();
 //   })
 //   .then(function (obj) {
+//     console.log(obj)
 //     console.log(obj.departments[0].displayName);
 //     console.log(obj.departments[1].displayName);
 //     console.log(obj.departments[8].displayName);
@@ -29,7 +30,7 @@
 //     document.querySelector(".section4").innerHTML = name4;
 //   });
 
-var req1 = "61800";
+var req1 = "468379";
 var req2 = "323912";
 var req3 = "56766";
 
@@ -45,11 +46,24 @@ for (let i = 0; i < reqs.length; i++) {
       return response.json();
     })
     .then(function (obj) {
+
       console.log(obj);
-      console.log(obj.title)
-      console.log(obj.primaryImage)
-      console.log(obj.objectID)
-      console.log(obj.department)
+      
+     
+      
+      
+      // console.log(obj.title)
+      // console.log(obj.primaryImage)
+      // console.log(obj.objectID)
+      // console.log(obj.department)
+
+      //display titles
+      // var title1 = obj.title
+      // document.querySelector(".section1").innerHTML = title1
+      // console.log(title1)
+
+      
+      
     });
 }
 
