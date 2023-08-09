@@ -31,7 +31,7 @@
 //   });
 
 var req1 = "468379";
-var req2 = "323912";
+var req2 = "323912"
 var req3 = "56766";
 
 const reqs = [req1, req2, req3];
@@ -48,11 +48,15 @@ for (let i = 0; i < reqs.length; i++) {
     .then(function (obj) {
 
       console.log(obj);
-      
+      console.log(obj.title)
      
+      var titles = obj.title
+      const names =[titles]
+
+      console.log(names)
       
       
-      // console.log(obj.title)
+
       // console.log(obj.primaryImage)
       // console.log(obj.objectID)
       // console.log(obj.department)
