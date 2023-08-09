@@ -30,30 +30,40 @@
 //     document.querySelector(".section4").innerHTML = name4;
 //   });
 
-var req1 = "468379";
-var req2 = "323912"
-var req3 = "56766";
 
-const reqs = [req1, req2, req3];
+fetch("https://api.le-systeme-solaire.net/rest/bodies/ ")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data){
+    console.log(data)
+  })
+  
 
-for (let i = 0; i < reqs.length; i++) {
-  console.log(reqs[i]);
-  fetch(
-    "https://collectionapi.metmuseum.org/public/collection/v1/objects/" +
-      reqs[i]
-  )
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (obj) {
+// var req1 = "468379";
+// var req2 = "323912"
+// var req3 = "56766";
 
-      console.log(obj);
-      console.log(obj.title)
+// const reqs = [req1, req2, req3];
+
+// for (let i = 0; i < reqs.length; i++) {
+//   console.log(reqs[i]);
+//   fetch(
+//     "https://collectionapi.metmuseum.org/public/collection/v1/objects/" +
+//       reqs[i]
+//   )
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (obj) {
+
+//       console.log(obj);
+//       console.log(obj.title)
      
-      var titles = obj.title
-      const names =[titles]
+//       var titles = obj.title
+//       const names =[titles]
 
-      console.log(names)
+//       console.log(names)
       
       
 
@@ -68,7 +78,7 @@ for (let i = 0; i < reqs.length; i++) {
 
       
       
-    });
-}
+//     });
+// }
 
-console.log(reqs);
+// console.log(reqs);
