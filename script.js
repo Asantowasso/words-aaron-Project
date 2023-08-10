@@ -35,8 +35,9 @@ fetch("https://api.le-systeme-solaire.net/rest/bodies/ ")
   .then(function (response) {
     return response.json();
   })
-  .then(function (data){
-    console.log(data)
+  .then(function (obj){
+    console.log(obj)
+    console.log(obj.bodies[0].englishName)
   })
   
 
